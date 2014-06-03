@@ -153,8 +153,7 @@
 
  /* COLLAPSE DATA-API
   * ================= */
-
-  $(document).on('click.collapse.data-api', '[data-toggle=collapse]', function (e) {
+  $('[data-toggle=collapse]').fastButton(function(e){
     var $this = $(this), href
       , target = $this.attr('data-target')
         || e.preventDefault()
