@@ -163,7 +163,7 @@
     $(target).collapse(option)
   }
 
-  $("[data-toggle=collapse]").hammer({}).on('tap', toggleCollapse);
+  $("[data-toggle=collapse]").hammer({prevent_mouseevents: true}).on('tap', toggleCollapse);
   //$(document).on('click', '[data-toggle=collapse]', toggleCollapse);
 
 }(window.jQuery);
