@@ -153,7 +153,7 @@
 
  /* COLLAPSE DATA-API
   * ================= */
-  $('[data-toggle=collapse]').fastButton(function(e){
+  function toggleCollapse(e){
     var $this = $(this), href
       , target = $this.attr('data-target')
         || e.preventDefault()
@@ -161,6 +161,9 @@
       , option = $(target).data('collapse') ? 'toggle' : $this.data()
     $this[$(target).hasClass('in') ? 'addClass' : 'removeClass']('collapsed')
     $(target).collapse(option)
-  })
+  }
+
+  $("[data-toggle=collapse]").hammer({}).on('tap', toggleCollapse);
+  //$(document).on('click', '[data-toggle=collapse]', toggleCollapse);
 
 }(window.jQuery);
